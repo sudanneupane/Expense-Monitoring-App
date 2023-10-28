@@ -1,5 +1,6 @@
 package com.example.expensemonitor;
 
+
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -10,11 +11,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,18 +35,23 @@ public class MainActivity extends AppCompatActivity {
     public void readSMS(View button) {
         try {
             Uri sms = Uri.parse("content://sms");
-//            Pattern pattern = Pattern.compile("(?i)((debit|debited|credit|credited))");
-            Pattern pattern = Pattern.compile("(?i)(a/c)");
+            Pattern pattern = Pattern.compile("(?i)((debit|debited|credit|credited|withdrawn))");
+            Pattern pattern1 = Pattern.compile("(?i)(a/c)");
+//            Pattern pattern = Pattern.compile("(?i)(account)+(?:credit|debit)");
 
 
-            Cursor cursor = getContentResolver().query(sms, null, null, null);
+            Cursor cursor = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                cursor = getContentResolver().query(sms, null, null, null);
+            }
             cursor.moveToFirst();
             //
             while (!cursor.isAfterLast()) {
                 // Read the message
                 String message = cursor.getString(12);
                 Matcher matcher = pattern.matcher(message);
-                if (matcher.find()) {
+                Matcher matcher1 = pattern1.matcher(message);
+                if (matcher.find() && matcher1.find()) {
                     display.append(message + "\n\n");
                 }
                 // Display the message
