@@ -66,17 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
             cursor.close();
         } catch (Exception e) {
-            Toast.makeText(this, "Error Occured", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Error Occurred", Toast.LENGTH_LONG).show();
         }
 
-//    public void handleInput(View v)
-//    {
-//        EditText t = findViewById(R.id.userinput);
-//        String inp =t.getText().toString();
-//        ((TextView)findViewById(R.id.output)).setText(inp);
-//
-//
-//    }
 
 
     }
