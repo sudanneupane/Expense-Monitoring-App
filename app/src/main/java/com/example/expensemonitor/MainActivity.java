@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
 
             Cursor cursor = null;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                cursor = getContentResolver().query(sms, null, null, null);
-            }
+            //if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                cursor = getContentResolver().query(sms, null, null, null, null);
+            //}
             cursor.moveToFirst();
 
 //            long datetime = cursor.getLong(cursor.getColumnIndexOrThrow("date"));
