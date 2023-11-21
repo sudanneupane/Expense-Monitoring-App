@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     public void readSMS(View button) {
         try {
             String lastcheckeddate, currentdate;
-            String months[] = {"Jan", "Feb", "Mar", "Apr",
+            String months[] = {" ","Jan", "Feb", "Mar", "Apr",
                     "May", "Jun", "Jul", "Aug", "Sep",
                     "Oct", "Nov", "Dec"};
 
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                     if(!isSameDate(lastcheckeddate, currentdate))
                     {
                         String[] splitdate = currentdate.split("[- ]");
-                        String printDate = months[Integer.parseInt(splitdate[1])] + " " + splitdate[2];
+                        String printDate = months[Integer.parseInt(splitdate[1]) ] + " " + splitdate[2] + ", " +splitdate[0];
                         display.append("----------------------------------------------------\n");
                         display.append( printDate + "\n\n");
                         lastcheckeddate = currentdate;
