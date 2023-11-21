@@ -9,15 +9,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="361dp"
+        android:layout_height="58dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/titleName"
@@ -25,11 +24,11 @@
             android:layout_height="55dp"
             android:layout_marginStart="16dp"
             android:paddingStart="8dp"
-            android:textAllCaps="true"
-            android:textSize="20dp"
-
-            android:textStyle="bold"
             android:text="Expense Monitor"
+            android:textAllCaps="true"
+
+            android:textSize="20dp"
+            android:textStyle="bold"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,9 +39,9 @@
             android:id="@+id/button4"
             android:layout_width="100dp"
             android:layout_height="55dp"
+            android:layout_marginEnd="8dp"
             android:onClick="readSMS"
             android:text="Read"
-            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.682"
@@ -55,13 +54,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="400dp"
+        android:layout_width="369dp"
 
-        android:layout_height="680dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="699dp"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
@@ -70,11 +69,11 @@
         app:layout_constraintVertical_bias="0.466">
 
         <ScrollView
-            android:layout_width="381dp"
-            android:layout_height="match_parent"
+            android:layout_width="352dp"
+            android:layout_height="683dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="8dp"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -86,17 +85,16 @@
 
             <TextView
                 android:id="@+id/output"
-                android:paddingStart="0dp"
-                android:paddingEnd="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
-
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
+
                 android:hint="SMS not found"
-                android:textSize="18dp"
-                />
+                android:paddingStart="0dp"
+                android:paddingEnd="16dp"
+                android:textSize="18dp" />
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
